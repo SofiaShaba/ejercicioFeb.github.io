@@ -25,22 +25,19 @@ self.addEventListener('fetch', event => {
   );
 });
 
-self.addEventListener('activate', event => {
+self.addEventListener("activate", (event) => {
   const cacheWhiteList = [CACHE_NAME];
-
   event.waitUntil(
     caches.keys()
-      .then(cacheNames => {
+      .then((cacheNames) => {
         return Promise.all(
-          cacheNames.map(cacheName => {
-            if (cacheWhiteList.indexOf(cacheName) == -1) {
-              return cache.delete(cacheName);
+          cacheNames.map((cacheNames) => {
+            if (cacheWhiteList.indexOf(cacheNames) == -1) {
+              return cache.delete(cacheNames);
             }
           })
-        )
+        );
       })
-      .then(() => {
-        self.clients.claim(); // active el cache
-      })
-  )
-})
+      .then(self.clients.claim())
+  );
+});

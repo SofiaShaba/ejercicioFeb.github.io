@@ -1,7 +1,7 @@
 {
   "name": "PWA divertida",
   "short_name": "PWAClase",
-  "start_url": "/index.html",
+  "start_url": "index.html?utm_source=web_app_manifest",
   "display": "standalone",
   "theme_color": "#f1f1f1",
   "background_color": "#f1f1f1",
