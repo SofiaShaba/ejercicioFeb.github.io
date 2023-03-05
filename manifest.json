@@ -5,6 +5,7 @@
   "display": "standalone",
   "theme_color": "#f1f1f1",
   "background_color": "#f1f1f1",
+  "scope":"./",
   "icons": [
     {
       "src": "./img/windows11/SmallTile.scale-100.png",
