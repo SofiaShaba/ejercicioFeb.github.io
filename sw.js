@@ -2,12 +2,14 @@ const CACHE_NAME = 'v1_cache1_BCH_PWA';
 
 var urlsToCache = [
   '/index.html',
-  '/main.js'
+  '/main.js',
+  '/sw.js',
+  '/manifest.json',
 ];
 
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open('mi-cache').then(cache => {
+    caches.open(CACHE_NAME).then(cache => {
       return cache.addAll(urlsToCache)
         .then(() => { self.skipWaiting() })
         .catch(err => console.log('Hubo un error', err))
